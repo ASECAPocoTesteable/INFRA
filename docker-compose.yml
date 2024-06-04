@@ -38,6 +38,24 @@ services:
     env_file:
       - .env2
 
+  postgres3:
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env3
+    volumes:
+      - warehouseapi_postgres_data:/var/lib/postgresql/data
+
+  warehouseapi:
+    image: ghcr.io/asecapocotesteable/warehouseapi:latest
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres3
+    env_file:
+      - .env3
+
   cartweb:
     image: ghcr.io/asecapocotesteable/cartweb:latest
     ports:
@@ -61,3 +79,4 @@ services:
 volumes:
   controltowerpt_postgres_data:
   deliveryapi_postgres_data:
+  warehouseapi_postgres_data:
