@@ -53,6 +53,11 @@ services:
     ports:
       - "3002:3002"
 
+  deliverymobile:
+    image: ghcr.io/asecapocotesteable/deliverymobile:latest
+    ports:
+      - "3008:3008"
+
 volumes:
   controltowerpt_postgres_data:
   deliveryapi_postgres_data:
