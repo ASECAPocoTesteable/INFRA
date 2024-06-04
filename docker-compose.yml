@@ -12,7 +12,7 @@ services:
 
 
   controltowerpt:
-    image: ghcr.io/gonza69420/controltowerpt:latest
+    image: ghcr.io/asecapocotesteable/controltowerpt:latest
     ports:
       - "8080:8080"
     depends_on:
@@ -30,7 +30,7 @@ services:
         - deliveryapi_postgres_data:/var/lib/postgresql/data
 
   deliveryapi:
-    image: ghcr.io/gonza69420/deliveryapi:latest
+    image: ghcr.io/asecapocotesteable/deliveryapi:latest
     ports:
       - "8082:8082"
     depends_on:
@@ -39,17 +39,17 @@ services:
       - .env2
 
   cartweb:
-    image: ghcr.io/gonza69420/cartweb:latest
+    image: ghcr.io/asecapocotesteable/cartweb:latest
     ports:
       - "3001:3001"
 
   adminweb:
-    image: ghcr.io/gonza69420/adminweb:latest
+    image: ghcr.io/asecapocotesteable/adminweb:latest
     ports:
       - "3000:3000"
 
   warehouseweb:
-    image: ghcr.io/gonza69420/warehouseweb:latest
+    image: ghcr.io/asecapocotesteable/warehouseweb:latest
     ports:
       - "3002:3002"
 
